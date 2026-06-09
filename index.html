@@ -2,26 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Basic Form</title>
     <style>
         body {
-            margin: 0;
-            background: white;
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            font-family: Arial, sans-serif;
+            background-color: white;
         }
 
-        h1 {
-            font-size: 5rem;
-            color: black;
+        .container {
+            width: 350px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <h1>Hello World</h1>
+
+<div class="container">
+    <h2>Contact Form</h2>
+
+    <!-- Issue #1: Missing action attribute, so form does not redirect to success.html -->
+    <form>
+        <!-- Issue #2: Typo in placeholder ("Mane" instead of "Name") -->
+        <input type="text" name="name" placeholder="Enter Mane" required>
+
+        <input type="email" name="email" placeholder="Enter Email" required>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
 </body>
 </html>
