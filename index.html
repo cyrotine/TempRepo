@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic Form</title>
     <style>
         body {
@@ -24,16 +25,29 @@
             text-align: center;
         }
 
-        input {
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        input, textarea {
             width: 100%;
             padding: 10px;
             margin: 8px 0;
             box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
         }
 
         button {
             width: 100%;
             padding: 10px;
+            margin-top: 10px;
             cursor: pointer;
         }
     </style>
@@ -43,12 +57,18 @@
 <div class="container">
     <h2>Contact Form</h2>
 
-    <!-- Issue #1: Missing action attribute, so form does not redirect to success.html -->
-    <form action="success.html">
-        <!-- Issue #2: Typo in placeholder ("Mane" instead of "Name") -->
-        <input type="text" name="name" placeholder="Enter Name" required>
+    <form action="success.html" method="post">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" placeholder="Enter Name" required>
 
-        <input type="email" name="email" placeholder="Enter Email" required>
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="Enter Email" required>
+
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" name="phone" placeholder="Enter Phone Number">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Enter Message" required></textarea>
 
         <button type="submit">Submit</button>
     </form>
